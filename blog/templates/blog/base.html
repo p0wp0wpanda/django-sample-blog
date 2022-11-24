@@ -13,10 +13,13 @@
                 <a href="{% url 'post_new' %}" class="top-menu">
                     {% include './icons/plus-square.svg' %}
                 </a>
-
                 <a href="{% url 'post_draft_list' %}" class="top-menu">
                     {% include './icons/pencil-square.svg' %}
                 </a>
+                <p class="top-menu">{{ user.username }} (<a href="{% url 'logout' %}">Log out</a>)</p>
+                {% else %}
+                <a href="{% url 'login' %}" class="top-menu">
+                    {% include './icons/lock-fill.svg' %}
                 {% endif %}
                 <h1><a href="/">Django Blog</a></h1>
             </div>
